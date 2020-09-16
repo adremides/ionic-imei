@@ -1,5 +1,7 @@
 {
   "name": "ionic-imei",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Uid } from '@ionic-native/uid/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  imei: string;
+
+  constructor(
+    private uid: Uid
+  ) {
+    this.getImei().then((imei: string) => {
+      this.imei = imei;
+    });
+  }
+
+  async getImei() {
+    return this.uid.IMEI;
+  }
 
 }
